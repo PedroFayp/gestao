@@ -1,0 +1,225 @@
+// Custom.scss
+// Option A: Include all of Bootstrap
+
+// Include any default variable overrides here (though functions won't be available)
+
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+// Then add additional custom code here
+
+// Required
+@import "../node_modules/bootstrap/scss/functions";
+
+// Default variable overrides
+$body-bg: #121318;
+$body-bg-secondary: #bbbfd3;
+$body-color: #ffffff;
+$display-color: #30383f;
+
+// Required
+@import "../node_modules/bootstrap/scss/variables";
+@import "../node_modules/bootstrap/scss/variables-dark";
+@import "../node_modules/bootstrap/scss/maps";
+@import "../node_modules/bootstrap/scss/mixins";
+@import "../node_modules/bootstrap/scss/root";
+
+// Optional Bootstrap components here
+@import "../node_modules/bootstrap/scss/reboot";
+@import "../node_modules/bootstrap/scss/type";
+@import 'bootstrap-icons/font/bootstrap-icons.css';
+
+// etc
+
+.icon-black {
+    color: black;
+}
+
+.display{
+    background-color: $display-color;
+}
+
+.banner-background {
+    width: 100%;
+    height: 40vh;
+    overflow: hidden; 
+    position: relative; 
+    border-radius: 15px;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.banner-background img {
+    width: calc(100% - 40px); 
+    height: calc(100% - 40px); 
+    object-fit: cover; 
+    position: absolute; 
+    top: 20px; 
+    left: 20px; 
+    border-radius: 10px;
+}
+
+.text-overlay {
+    position: absolute; 
+    color: white; 
+    text-align: center; 
+    z-index: 1; 
+    top: 50%; 
+    left: 50%;
+    transform: translate(-50%, -50%); 
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7); 
+}
+
+.nav-link.active {
+    color: #003f83; 
+    font-weight: bold; 
+}
+
+#imagemProduto {
+    background-color: #ffffff; 
+    color: #000000; 
+}
+
+.description-box {
+    display: none; 
+    position: absolute;
+    background-color: $body-bg; 
+    border: 1px solid $body-bg-secondary; 
+    padding: 10px;
+    border-radius: 5px; 
+    z-index: 10; 
+    width: auto;
+    max-width: 90%; 
+    left: 50%; 
+    transform: translateX(-50%);
+    overflow: auto;
+    max-height: 150px;
+}
+
+.model-card:hover .description-box {
+    display: block;
+}
+
+@media (max-width: 768px) {
+    .description-box {
+        max-width: 95%;
+    }
+}
+
+.model-card {
+    position: relative;
+    background-color: $body-bg-secondary;
+    border-radius: 15px;
+    transition: transform 0.3s ease;
+    width: 100%;
+}
+
+.model-card:hover {
+    transform: translateY(-5px); 
+    box-shadow: 0 4px 20px rgb(0, 0, 0);
+    cursor: pointer;
+}
+
+.card-img {
+    transition: transform 0.3s ease;
+}
+
+.model-card:hover .card-img {
+    transform: translateY(-3px); 
+}
+
+.model-card-text{
+    background-color: $body-bg;
+    border-radius: 15px;
+    text-align: center;
+}
+
+.cart-color{
+    color: $body-bg-secondary;
+    text-decoration: none;
+}
+
+.cart-overlay {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: $display-color;
+    border: 1px solid $body-bg-secondary;
+    border-radius: 5px;
+    padding: 10px;
+    z-index: 1000;
+}
+
+.cart-dropdown {
+    position: absolute;
+    top: 30px;
+    right: 0;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    z-index: 1000;
+}
+
+.cart-icon {
+    cursor: pointer;
+}
+
+.cart-popup {
+    position: absolute;
+    right: 0;
+    top: 50px;
+    background: $display-color;
+    border: 1px solid $body-bg-secondary;
+    padding: 10px;
+    z-index: 1000;
+    width: 200px;
+}
+
+.cart-popup h5 {
+    margin: 0;
+}
+
+.basic-width {
+    min-width: 15%;
+}
+
+@media (max-width: 768px) {
+    .row > * {
+        flex-shrink: 0;
+        max-width: 50%;
+        min-width: 25%;
+    }
+}
+
+@media (max-width: 500px) {
+    .row > * {
+        max-width: 100%;
+        min-width: 50%;
+    }
+}
+
+.btn-close{
+    background-color: $body-color;
+    border-radius: 5px;
+    border: 1px solid $body-bg-secondary;
+}
+
+.form-control{
+    background-color: $body-color;
+    color: #000000;
+}
+
+.alert-container {
+    position: fixed;
+    top: 70px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1050;
+    width: auto;
+    max-width: 300px;
+}
+
+.alert {
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem;
+}
